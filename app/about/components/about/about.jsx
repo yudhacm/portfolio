@@ -2,8 +2,8 @@ import Image from "next/image";
 import Card from "./spotify/card";
 import { motion } from "framer-motion";
 import Me1 from "@/public/image/me1.jpg";
-import Me2 from "@/public/image/me2.jpg";
-import Me3 from "@/public/image/me3.jpg";
+import Me2 from "@/public/image/me2.jpeg";
+import Me3 from "@/public/image/me3.jpeg";
 import Hr from "@/components/Hr";
 
 function Title() {
@@ -35,7 +35,7 @@ export default function About() {
 								className="w-full h-full">
 								<Image
 									src={Me1}
-									alt="Alvalens"
+									alt="Yudha"
 									layout="fill"
 									objectFit="cover"
 									placeholder="blur"
@@ -58,7 +58,7 @@ export default function About() {
 								className="w-full h-full">
 								<Image
 									src={Me2}
-									alt="Alvalens"
+									alt="Yudha"
 									layout="fill"
 									objectFit="cover"
 									placeholder="blur"
@@ -83,7 +83,7 @@ export default function About() {
 								className="w-full h-full">
 								<Image
 									src={Me3}
-									alt="Alvalens"
+									alt="Yudha"
 									layout="fill"
 									objectFit="cover"
 									placeholder="blur"
@@ -108,37 +108,37 @@ export default function About() {
 						type: "spring",
 					}}>
 					<h2 className="text-2xl font-bold tracking-wider mb-3">
-						Alvalen Shafelbilyunazra
+						Yudha Caesar Maulana
 					</h2>
 					<p className="text-gray-600 text-justify title text-lg">
-						Hey there, I&rsquo;m Alvalen Shafelbilyunazra, a
-						<span className="text-black font-medium">
-							{" "}
-							passionate Web Developer
-						</span>{" "}
-						with a growing expertise in
-						<span className="text-black font-medium">
-							{" "}
-							Artificial Intelligence.
-						</span>{" "}
-						Hailing from Pasuruan, East Java, Indonesia, I&rsquo;m currently
-						pursuing my degree in{" "}
-						<span className="text-black font-medium">
-							Computer Science
-						</span>{" "}
-						at{" "}
-						<span className="text-black font-medium">
-							Universitas Negeri Malang.
-						</span>{" "}
-						My work bridges modern web technologies and intelligent systems—from
-						building responsive, scalable websites to exploring generative AI
-						and LLM-based solutions. Beyond development, I stay curious about
-						design and emerging technologies. In today&rsquo;s ever-changing
-						digital landscape, I believe being a
-						<span className="text-black font-medium"> lifelong learner</span> is
-						essential. Let&rsquo;s connect and explore the evolving intersection
-						of web and AI together!
+						Hey there, I&rsquo;m Yudha Caesar Maulana, a
+						<span className="text-black font-medium"> Web Developer </span>
+						and
+						<span className="text-black font-medium"> Data & AI Enthusiast </span>
+						with a strong interest in building intelligent and scalable systems.
+						Based in Gresik, East Java, Indonesia, I&rsquo;m currently pursuing a degree in
+						<span className="text-black font-medium"> Informatics Engineering </span>
+						at
+						<span className="text-black font-medium"> Universitas Trunojoyo Madura.</span>{" "}
+						<br /><br />
+						My experience spans modern web development using
+						<span className="text-black font-medium"> PHP, Laravel, and Flask</span>,
+						applied machine learning for data analysis and prediction, and
+						hands-on work with
+						<span className="text-black font-medium"> networking fundamentals (Cisco)</span>{" "}
+						and
+						<span className="text-black font-medium"> server virtualization using Proxmox.</span>{" "}
+						I enjoy designing systems that connect software, data, and infrastructure into
+						practical real-world solutions.
+						<br /><br />
+						Curious by nature, I continuously explore emerging technologies—from
+						AI models and data-driven systems to distributed architectures. I believe that
+						being a
+						<span className="text-black font-medium"> lifelong learner </span>
+						is key to thriving in today&rsquo;s fast-evolving digital world.
+						Let&rsquo;s build, analyze, and innovate together.
 					</p>
+
 					<Card />
 				</motion.div>
 			</div>

@@ -5,46 +5,47 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 config.autoAddCss = false;
 import "./nprogress.css";
 import { Analytics } from "@vercel/analytics/react";
-import Chat from "@/components/Chat";
+// import Chat from "@/components/Chat";
 import ClientTopProgressBar from "@/components/ClientTopProgressBar";
 
 export const metadata = {
-    title: "Alvalens | Portofolio",
+    title: "yudha | Portofolio",
 
     description:
-		"My name is Alvalens, I'm a web developer and I'm passionate about it. I'm currently studying at Universitas Negeri Malang.",
+		"My name is Yudha, I'm a web developer and I'm passionate about it. I'm currently studying at Universitas Trunodjoyo Madura.",
 
-    author: "Alvalen Shafelbilyunazra",
-    siteUrl: "https://www.alvalens.my.id",
-    applicationName: "Alvalens",
+    author: "Yudha Caesar Maulana",
+    siteUrl: "https://www.yudhacaesarmaulana.my.id",
+    applicationName: "Yudha",
 
     keywords: [
-		"alvalens",
-		"alvalen",
-		"alvalen shafel",
-		"shafel",
-		"alvalen shafelbilyunazra",
-		"alvalen shafel bilyunazra",
-		"bloodfallen",
-		"alvalen porto",
-		"alvalen um",
+		"yudha",
+		"yudha caesar",
+		"yudha caesar maulana",
+		"yudha caesar maulana portfolio",
+		"yudha caesar maulana portofolio",
+		"yams",
+		"yudha porto",
+		"yudha utm",
+		"yudha caesar utm",
+		"yudha caesar maulana utm",
 	],
 
     openGraph: {
 		type: "website",
-		url: "https://www.alvalens.my.id",
-		title: "Alvalens | Portofolio",
-		site_name: "Alvalens | Portofolio",
-		description: "My name is Alvalens, This is my portofolio website.",
+		url: "https://www.yudhacaesarmaulana.my.id",
+		title: "Yudha | Portofolio",
+		site_name: "Yudha | Portofolio",
+		description: "My name is Yudha, This is my portofolio website.",
 		width: 1200,
 		height: 630,
 		images: [
 			{
 				url: "/og-image-rev.png",
-				alt: "Alvalens Portofolio",
+				alt: "Yudha Portofolio",
 			},
 		],
-		site_name: "Alvalens | Portofolio",
+		site_name: "Yudha | Portofolio",
 	}
 };
 
@@ -55,7 +56,7 @@ export default function RootLayout({ children }) {
 				<ClientTopProgressBar />
 				<Navbar />
 				{children}
-				<Chat />
+				{/* <Chat /> */}
 				<Analytics />
 			</body>
 		</html>

@@ -4,119 +4,76 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 
 const experiences = [
-	{
-		id: 1,
-		startDate: "Sep 2023",
-		endDate: "Jan 2024",
-		company: "Universitas Negeri Malang",
-		position: "Assistant Lecturer",
-		type: "Seasonal",
-		location: "Malang, Indonesia",
-		description:
-			"Assisted in teaching and mentoring students in algorithms and data structures, focusing on practical applications and problem-solving techniques. Developed course materials and provided support in lab sessions.",
-		skills: ["Python", "C", "Algorithms", "Data Structures", "Mentoring"],
-	},
-	{
-		id: 2,
-		startDate: "Jul 2024",
-		endDate: "Jan 2025",
-		company: "Outlier AI",
-		position: "AI Trainer",
-		type: "Freelance (Remote)",
-		location: "Oakland, California",
-		description:
-			"Trained LLM models using RLFH, focusing on enhancing their understanding of human language and improving their response accuracy. Collaborated with a team of AI specialists to refine model performance and ensure high-quality outputs.",
-		skills: ["Generative AI", "RLFH", "LLM", "Prompt Engineering", "Teamwork"],
-	},
-	{
-		id: 3,
-		startDate: "Jun 2023",
-		endDate: "Feb 2025",
-		company: "PUI-PT DLI",
-		position: "Fullstack Developer",
-		type: "Freelance",
-		location: "Malang, Indonesia",
-		description:
-			"Crafted and maintained web applications using Laravel, ensuring high performance and responsiveness. Collaborated with designers and other  developers to create seamless user experiences.",
-		skills: ["Laravel", "MySQL", "PHP", "JavaScript", "Teamwork"],
-	},
-	{
-		id: 4,
-		startDate: "Apr 2025",
-		endDate: "Jul 2025",
-		company: "Vektorian Labophase",
-		position: "Front-end Developer",
-		type: "Freelance",
-		location: "Malang, Indonesia",
-		description:
-			"Developed and maintained web applications using Next.js. Focused on creating responsive and user-friendly interfaces while ensuring backend functionality. Collaborated with backend and designers to implement modern UI/UX principles.",
-		skills: ["Next.js", "Typescript", "Teamwork"],
-	},
-	{
-		id: 5,
-		startDate: "Apr 2023",
-		endDate: "Present",
-		company: "Self-Employed",
-		position: "Web Developer & AI Consultant",
-		type: "Freelance",
-		location: "Malang, Indonesia",
-		description:
-			"Developed 15+ web applications using Next.js, React, and Laravel. Provided AI consulting services, including creating custom LLMs. Focused on delivering high-quality, user-friendly applications and AI solutions.",
-		skills: [
-			"Next.js",
-			"React",
-			"Laravel",
-			"MySQL",
-			"PostgreSQL",
-			"MongoDB",
-			"JavaScript",
-			"TypeScript",
-			"Gemini AI",
-		],
-	},
-	{
-		id: 6,
-		startDate: "Aug 2023",
-		endDate: "Present",
-		company: "PT Hafdzamedia Teknologi Aplikasi",
-		position: "Fullstack Web Developer",
-		type: "Part-time",
-		location: "Malang, Indonesia",
-		description:
-			"Developed and maintained web applications using React, Next.js, and Laravel. Focused on creating responsive and user-friendly interfaces while ensuring backend functionality.",
-		skills: [
-			"React",
-			"Next.js",
-			"Laravel",
-			"MySQL",
-			"JavaScript",
-			"TypeScript",
-			"Teamwork",
-		],
-	},
-	{
-		id: 7,
-		startDate: "Feb 2025",
-		endDate: "Present",
-		company: "Joki Proyek",
-		position: "IT Implementation Specialist",
-		type: "Internship (Remote)",
-		location: "Malang, Indonesia",
-		description:
-			"Developed and maintained current internal web applications using Next.js & and Laravel. Fixed bugs and implemented new features to enhance user experience. Collaborated with the team to ensure smooth deployment and functionality of applications.",
-		skills: [
-			"Next.js",
-			"Laravel",
-			"MySQL",
-			"PostgreSQL",
-			"JavaScript",
-			"TypeScript",
-			"MongoDB",
-			"Docker",
-			"Teamwork",
-		],
-	},
+  {
+    id: 1,
+    startDate: "Aug 2025",
+    endDate: "Dec 2025",
+    company: "ADP Kontraktor",
+    position: "Backend Developer (Remote)",
+    type: "Remote",
+    location: "Bali, Indonesia",
+    description:
+      "• Designed and developed a Laravel & PHP-based backend system for a construction project management application.\n" +
+      "• Implemented RESTful APIs for user management, projects, house designs, payments, and customer communication modules.\n" +
+      "• Designed and managed MySQL database structures, including table relationships, migrations, seeders, and query optimization.\n" +
+      "• Implemented multi-role authentication and authorization (Admin, Supervisor, Customer Service, Client).\n" +
+      "• Handled server-side data validation, input security, and error handling.",
+    skills: [
+      "Laravel",
+      "PHP",
+      "REST API",
+      "MySQL",
+      "Database Design",
+      "Migration & Seeder",
+      "Authentication",
+      "Authorization (Multi-role)",
+      "Validation",
+      "Error Handling",
+    ],
+  },
+
+  {
+    id: 2,
+    startDate: "Aug 2025",
+    endDate: "Dec 2025",
+    company: "Universitas Trunojoyo Madura",
+    position: "Teaching Assistant – Web Application Development",
+    type: "Part-time",
+    location: "Bangkalan, Indonesia",
+    description:
+      "• Taught and mentored undergraduate students in Web Application Development practicum using PHP and MySQL.",
+    skills: ["PHP", "MySQL", "Teaching", "Mentoring"],
+  },
+
+  {
+    id: 3,
+    startDate: "Aug 2025",
+    endDate: "Dec 2025",
+    company: "Universitas Trunojoyo Madura",
+    position: "Teaching Assistant – Computer Networking",
+    type: "Part-time",
+    location: "Bangkalan, Indonesia",
+    description:
+      "• Taught and mentored students in Computer Networking practicum using Cisco software for network design and configuration.",
+    skills: ["Cisco Packet Tracer", "Networking", "Network Configuration", "Teaching", "Mentoring"],
+  },
+
+  {
+    id: 4,
+    startDate: "Aug 2025",
+    endDate: "Jan 2026",
+    company: "Universitas Trunojoyo Madura",
+    position: "Research Laboratory Administrator",
+    type: "Part-time",
+    location: "Bangkalan, Indonesia",
+    description:
+      "• Assisted and monitored ongoing activities in the research laboratory.\n" +
+      "• Maintained and ensured proper functioning of all laboratory equipment.\n" +
+      "• Acted as a liaison between students and responsible lecturers.",
+    skills: ["Laboratory Administration", "Equipment Maintenance", "Coordination", "Communication"],
+  },
 ];
+
 
 experiences.reverse();
 
@@ -187,7 +144,7 @@ function ExperienceCard({ experience, index, isEven }) {
 			whileInView={{ opacity: 1, y: 0 }}
 			transition={{ delay: index * 0.2, duration: 0.6 }}
 			className={`relative group ${
-				isEven ? "md:ml-auto md:pl-12" : "md:mr-auto md:pr-12"
+				isEven ? "md:ml-auto md:pl-13" : "md:mr-auto md:pr-9"
 			} md:w-1/2`}>
 			{" "}
 			{/* Card */}

@@ -3,7 +3,12 @@
 // Licensed under the GNU GPL v3.0. See LICENSE for details.
 
 "use client";
-import ReactFullpage from "@fullpage/react-fullpage";
+import dynamic from "next/dynamic";
+
+const ReactFullpage = dynamic(() => import("@fullpage/react-fullpage"), {
+	ssr: false,
+});
+
 import Image from "next/legacy/image";
 // import "../globals.css";
 import { motion } from "framer-motion";
@@ -11,16 +16,18 @@ import Link from "next/link";
 
 // components
 import Button from "@/components/Button";
-import Me from "@/public/image/me.jpg";
-import MeAbout from "@/public/image/me2.jpg";
-import Setup from "@/public/image/setup.jpg";
+import Me from "@/public/image/me1.jpg";
+import MeAbout from "@/public/image/me2.jpeg";
+// import Setup from "@/public/image/setup.jpg";
 import ProjectAll from "@/public/image/projects.png";
 import Hr from "@/components/Hr";
 // icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
-import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+
+// import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faDiscord } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
@@ -28,16 +35,18 @@ const MyPage = () => {
 	const fullpageOptions = {
 		anchors: ["home", "about", "projects", "contact"],
 		scrollingSpeed: 1000,
-		licenseKey: "gplv3-license",
+		licenseKey: process.env.NEXT_PUBLIC_FULLPAGE_LICENSE_KEY || "YOUR_KEY_HERE",
 		menu: "#sidebar",
 		lockAnchors: false,
 	};
 
+
 	return (
 		<div>
 			<ReactFullpage
-				render={({ state, fullpageApi }) => (
-					<ReactFullpage.Wrapper>
+				{...fullpageOptions}
+				render={() => (
+					<>
 						<div className="section">
 							<div className="mx-auto container grid grid-cols-1 md:grid-cols-3 gap-4 p-10 overflow-hidden md:px-20">
 								<motion.div
@@ -54,7 +63,7 @@ const MyPage = () => {
 												width={500}
 												height={500}
 												className="rounded-full w-full h-full object-cover "
-												alt="Alvalens"
+												alt="Yudha"
 												placeholder="blur"
 											/>
 										</div>
@@ -67,7 +76,7 @@ const MyPage = () => {
 											delay: 0.2,
 											type: "spring",
 										}}>
-										Alvalen Shafel
+										Yudha Caesar Maulana
 									</motion.h3>
 									<motion.h1
 										className="text-black text-5xl md:text-6xl lg:text-7xl 2xl:text-8xl font-bold my-2 md:my-5"
@@ -77,7 +86,7 @@ const MyPage = () => {
 											delay: 0.3,
 											type: "spring",
 										}}>
-										Full Stack Developer
+										Backend Developer
 									</motion.h1>
 									<motion.p
 										className="title text-md  2xl:text-xl mt-4 tracking-wider text-gray-500 leading-[1.7rem]"
@@ -87,11 +96,13 @@ const MyPage = () => {
 											delay: 0.4,
 											type: "spring",
 										}}>
-										Hi! I&rsquo;am Alvalen, A junior fullstack developer specializing in
-										modern Web Development with a growing focus on Artificial
-										Intelligence. Passionate about building scalable,
-										user-friendly web applications and exploring AI technologies
-										such as generative models and LLM integration.
+										Hi! I&rsquo;m Yudha, a junior backend developer with a strong foundation in
+										web application development and applied data science. I focus on building
+										scalable backend systems using PHP, Laravel, and Python-based frameworks,
+										while also exploring machine learning for data analysis and intelligent
+										features. I enjoy working across backend logic, databases, and infrastructure,
+										and I continuously learn new technologies to solve real-world problems.
+
 									</motion.p>
 									<motion.div
 										className="buttons flex flex-row justify-center items-center space-x-4 mt-10"
@@ -102,13 +113,12 @@ const MyPage = () => {
 											type: "spring",
 										}}>
 										<Button variation="primary">
-											<Link
-												href={"/docs/cv.pdf"}
-												target="_blank"
-												rel="noopener noreferrer"
-												download>
+											<a
+												href="/docs/CV_Internship.pdf"
+												download
+												className="block w-full h-full">
 												Download CV
-											</Link>
+											</a>
 										</Button>
 										<Button variation="secondary">
 											<a href="#contact">Contact Me</a>
@@ -129,7 +139,7 @@ const MyPage = () => {
 											width={400}
 											height={550}
 											placeholder="blur"
-											alt="Alvalens"
+											alt="Yudha"
 											className="rounded-full w-full h-full object-cover"
 										/>
 									</div>
@@ -161,7 +171,7 @@ const MyPage = () => {
 											src={MeAbout}
 											layout="fill"
 											className="object-cover"
-											alt="Alvalens"
+											alt="Yudha"
 											placeholder="blur"
 										/>
 									</motion.div>
@@ -227,7 +237,7 @@ const MyPage = () => {
 											src={ProjectAll}
 											layout="fill"
 											className="object-cover"
-											alt="Alvalens Setup"
+											alt="Yudha Setup"
 											placeholder="blur"
 										/>
 									</motion.div>
@@ -253,10 +263,10 @@ const MyPage = () => {
 											type: "spring",
 										}}>
 										This is some of my projects that I have done{" "}
-										<span className="bg-transparent md:bg-gray-100 bg-opacity-50 xl:bg-transparent">
+										{/* <span className="bg-transparent md:bg-gray-100 bg-opacity-50 xl:bg-transparent">
 											{" "}
 											and currently working on.
-										</span>
+										</span> */}
 									</motion.p>
 									<motion.div
 										initial={{ y: 40, opacity: 0 }}
@@ -276,7 +286,7 @@ const MyPage = () => {
 							<div className="relative md:h-screen w-screen  gap-4 p-10 flex justify-center items-center flex-col overflow-hidden">
 								<div className="z-0 mb-48 md:mb-0  md:absolute top-1/4  md:right-[10%] md:-translate-y-16 ">
 									<motion.div
-										className="bg-slate-300 rounded-sm h-[400px] md:h-[600px] w-[80vw] md:w-[30vw] grayscale hover:grayscale-0"
+										className=""
 										initial={{
 											x: 300,
 											opacity: 0,
@@ -293,13 +303,7 @@ const MyPage = () => {
 											stiffness: 100,
 											damping: 20,
 										}}>
-										<Image
-											src={Setup}
-											layout="fill"
-											className="object-cover"
-											alt="Alvalens Setup"
-											placeholder="blur"
-										/>
+
 									</motion.div>
 								</div>
 								<div className="z-10 w-full absolute md:w-auto  md:left-[10%] top-[60%] md:top-1/3 col-span-2 flex flex-col justify-center items-start md:items-start text-start px-10 overflow-hidden">
@@ -335,14 +339,14 @@ const MyPage = () => {
 											delay: 0.3,
 											type: "spring",
 										}}>
-										<a href="mailto:Alvalen.shafel04@gmail.com?subject=Hello&body=Hello Alvalens,">
-											alvalen.shafel04@gmail.com
+										<a href="mailto:yareksesmemi@gmail.com?subject=Hello&body=Hello Yudha,">
+											yareksesmemi@gmail.com
 										</a>
 									</motion.p>
 									{/* icons */}
 									<div className="flex justify-center items-center space-x-4">
 										<motion.a
-											href="mailto:Alvalen.shafel04@gmail.com?subject=Hello&body=Hello Alvalens,"
+											href="mailto:yareksesmemi@gmail.com?subject=Hello&body=Hello Yudha,"
 											className="flex justify-center items-center bg-gray-700 w-14 h-14 rounded-full text-gray-100 hover:bg-gray-400 transition-all ease-in-out duration-300"
 											initial={{ y: 40, opacity: 0 }}
 											whileInView={{ y: 0, opacity: 1 }}
@@ -354,7 +358,7 @@ const MyPage = () => {
 										</motion.a>
 
 										<motion.a
-											href="https://github.com/Alvalens"
+											href="https://github.com/yudhacm"
 											target="_blank"
 											rel="noopener noreferrer"
 											className="flex justify-center items-center bg-gray-700 w-14 h-14 rounded-full text-gray-100 hover:bg-gray-400 transition-all ease-in-out duration-300"
@@ -367,7 +371,7 @@ const MyPage = () => {
 											<FontAwesomeIcon icon={faGithub} className="text-3xl" />
 										</motion.a>
 										<motion.a
-											href="https://www.instagram.com/alvalens_/"
+											href="https://www.instagram.com/yudha.cm/"
 											target="_blank"
 											rel="noopener noreferrer"
 											className="flex justify-center items-center bg-gray-700 w-14 h-14 rounded-full text-gray-100 hover:bg-gray-400 transition-all ease-in-out duration-300"
@@ -383,6 +387,20 @@ const MyPage = () => {
 											/>
 										</motion.a>
 										<motion.a
+											href="https://wa.me/6282140642894"
+											target="_blank"
+											rel="noopener noreferrer"
+											className="flex justify-center items-center bg-gray-700 w-14 h-14 rounded-full text-gray-100 hover:bg-gray-400 transition-all ease-in-out duration-300"
+											initial={{ opacity: 0, y: 40 }}
+											whileInView={{ opacity: 1, y: 0 }}
+											transition={{
+												y: { delay: 0.15 },
+												opacity: { delay: 0.25 },
+											}}>
+											<FontAwesomeIcon icon={faWhatsapp} className="text-3xl" />
+										</motion.a>
+
+										{/* <motion.a
 											href="https://www.linkedin.com/in/alvalen-shafel-8a081a254/"
 											target="_blank"
 											rel="noopener noreferrer"
@@ -394,8 +412,8 @@ const MyPage = () => {
 												opacity: { delay: 0.5 },
 											}}>
 											<FontAwesomeIcon icon={faLinkedin} className="text-3xl" />
-										</motion.a>
-										<motion.a
+										</motion.a> */}
+										{/* <motion.a
 											href="https://discordapp.com/users/bloody#6118"
 											target="_blank"
 											rel="noopener noreferrer"
@@ -407,14 +425,13 @@ const MyPage = () => {
 												opacity: { delay: 0.6 },
 											}}>
 											<FontAwesomeIcon icon={faDiscord} className="text-3xl" />
-										</motion.a>
+										</motion.a> */}
 									</div>
 								</div>
 							</div>
 						</div>
-					</ReactFullpage.Wrapper>
+					</>
 				)}
-				{...fullpageOptions}
 			/>
 		</div>
 	);

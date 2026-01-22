@@ -20,7 +20,7 @@ import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 
 const category = {
 	1: "Web Development",
-	2: "AI & Machine Learning",
+	2: "Machine Learning",
 	9: "Other",
 };
 
@@ -43,10 +43,10 @@ export default function Page() {
 							initial={{ scale: 1 }}
 							animate={{ scale: 1.6 }}
 							transition={{ duration: 1, ease: "circOut" }}
-							className="bg-slate-300 rounded-sm h-[400px] md:h-[600px] w-[80vw] md:w-[30vw] grayscale hover:grayscale-0 ">
+							className="bg-slate-300 rounded-sm h-[400px] md:h-[600px] w-[80vw] md:w-[25vw] grayscale hover:grayscale-0 ">
 							<Image
 								src={ProjectAll}
-								alt="Alvalens"
+								alt="Yudha Projects"
 								layout="fill"
 								objectFit="cover"
 								placeholder="blur"
@@ -59,11 +59,11 @@ export default function Page() {
 						</h1>
 						<Hr />
 						<p className="title  text-xl mt-4 tracking-wider text-gray-900 leading-[1.7rem] mb-5">
-							List of my projects that I have done and{" "}
-							<span className="bg-transparent md:bg-gray-100 bg-opacity-50 xl:bg-transparent">
+							List of my projects that I have done{" "}
+							{/* <span className="bg-transparent md:bg-gray-100 bg-opacity-50 xl:bg-transparent">
 								{" "}
 								currently working on.
-							</span>
+							</span> */}
 						</p>
 						<motion.div
 							initial={{ opacity: 0, y: 100 }}
@@ -80,13 +80,13 @@ export default function Page() {
 						</motion.div>
 					</div>
 				</div>
-				<div className="mt-10 flex flex-col justify-start items-center w-full pl-10 md:pl-32">
+				{/* <div className="mt-10 flex flex-col justify-start items-center w-full pl-10 md:pl-32">
 					<div className="flex justify-center items-center flex-col my-5 self-start ">
 						<Hr variant="long"></Hr>
 						<h1 className="text-3xl font-bold mt-3">Hightlight</h1>
 					</div>
-				</div>
-				<div className="relative w-screen mx-auto container gap-4 px-10 grid grid-cols-1 md:grid-cols-2 mb-10">
+				</div> */}
+				{/* <div className="relative w-screen mx-auto container gap-4 px-10 grid grid-cols-1 md:grid-cols-2 mb-10">
 					<div className="flex justify-center items-start flex-col mb-5 ">
 						<div className="images relative w-full  aspect-square">
 							<div className="absolute top-28 left-10 h-[40%]  aspect-video grayscale hover:grayscale-0 transition-all ease duration-300 hover:scale-150 z-10">
@@ -100,7 +100,7 @@ export default function Page() {
 									className="w-full h-full shadow-lg">
 									<Image
 										src={Intervyou1}
-										alt="Alvalens"
+										alt="Yudha"
 										layout="fill"
 										objectFit="cover"
 										placeholder="blur"
@@ -124,7 +124,7 @@ export default function Page() {
 									className="w-full h-full shadow-lg ">
 									<Image
 										src={Intervyou3}
-										alt="Alvalens"
+										alt="Yudha"
 										layout="fill"
 										objectFit="cover"
 										placeholder="blur"
@@ -150,7 +150,7 @@ export default function Page() {
 									className="w-full h-full shadow-lg">
 									<Image
 										src={Intervyou2}
-										alt="Alvalens"
+										alt="Yudha"
 										layout="fill"
 										objectFit="cover"
 										placeholder="blur"
@@ -200,7 +200,7 @@ export default function Page() {
 							</Button>
 						</div>
 					</motion.div>
-				</div>
+				</div> */}
 				<div className="mt-16 flex flex-col justify-start items-center w-full pl-10 md:pl-32">
 					<div className="flex justify-center items-center flex-col my-5 self-start">
 						<Hr variant="long"></Hr>
